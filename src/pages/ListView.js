@@ -21,8 +21,8 @@ export default function ListView() {
 
    // Hook to detect change of current date
    useEffect(() => {
-      if (lastUpdate !== today) {
-         // if date from state doesn't match with current date
+      // if date from state doesn't match with current date
+      if (today !== lastUpdate) {
 
          dispatch(changeDate(today)); // change current-date in state
 
