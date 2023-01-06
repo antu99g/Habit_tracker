@@ -1,0 +1,81 @@
+/* Parent container of weekview page */
+.weekContainer{
+   margin: auto;
+   width: 30vw;
+   padding: 0 2vw 2vw;
+}
+/* Current month header */
+.weekContainer > h2{
+   text-align: center;
+   color: darkslategrey;
+}
+
+/* Single habit inside habit-list */
+.eachHabit{
+   padding: 10px;
+   margin-bottom: 30px;
+   border: 1px solid;
+   border-radius: 5px;
+}
+/* Header of each habit */
+.eachHabit > h4{
+   margin-top: 7px;
+   margin-left: 10px;
+}
+
+/* 7 days calender in each habit */
+.calender{
+   display: flex;
+   flex-direction: row-reverse;
+   width: 100%;
+   margin: auto;
+}
+
+/* Each day in calender */
+.calenderDate{
+   width: 50px;
+   height: 50px;
+   border: 1px solid darkslategrey;
+   border-right: 0;
+   position: relative;
+}
+/* Last child in calender */
+.calender span:first-child{   /* since container in row-reverse */
+   border-right: 1px solid darkslategrey;
+}
+/* Header of today */
+.today:before{
+   content: 'Today';
+   position: absolute;
+   top: -20px;
+   left: 4px;
+   color: rgb(19, 181, 127);
+}
+/* Form to change status of a habit */
+.calenderDate > select{
+   position: absolute;
+   background-color: white;
+   z-index: 1;
+}
+/* Name of each day */
+.calenderDate > small{
+   color: grey;
+}
+
+/* Container for logo of status */
+.statusImg{
+   width: 20px;
+   margin: auto;
+   margin-top: 2px;
+}
+/* Img indicating status */
+.statusImg > img{
+   max-width: 100%;
+}
+
+/* Button to change status */
+.editBtn{
+   width: 13px;
+   position: absolute;
+   right: 0;
+}
