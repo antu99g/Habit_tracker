@@ -4,7 +4,7 @@ import Day from "./Day";
 
 
 // List of 7 days in each habit
-export default function Calender({ statusList, habitIndex }) {
+export default function Calender({ statusList, habitIndex, title }) {
 
    // Array of last 7 days (in backwards)
    const week = [];
@@ -14,12 +14,15 @@ export default function Calender({ statusList, habitIndex }) {
    }
 
    return (
-      <div className={styles.calender}>
-         {week.map((day, index) => {
-            const record = index < statusList.length;
-            const props = {statusList, habitIndex, index, day, record};
-            return <Day {...props} key={index} />;
-         })}
+      <div className={styles.eachHabit}>
+         <h4>{title}</h4>
+         <div className={styles.calender}>
+            {week.map((day, index) => {
+               const record = index < statusList.length;
+               const props = { statusList, habitIndex, index, day, record };
+               return <Day {...props} key={index} />;
+            })}
+         </div>
       </div>
    );
 }

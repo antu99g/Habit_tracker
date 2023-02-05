@@ -16,14 +16,12 @@ export default function WeekView() {
          <h2>{month}</h2>
          {allHabits.map((habit, index) => {
             return (
-               <div key={index} className={styles.eachHabit}>
-                  <h4>{habit.title}</h4>
-                  <Calender
-                     statusList={habit.statusList}
-                     habitIndex={index}
-                     key={index}
-                  />
-               </div>
+               <Calender
+                  statusList={habit.statusList}
+                  habitIndex={index}
+                  title={habit.title}
+                  key={index}
+               />
             );
          })}
       </div>
