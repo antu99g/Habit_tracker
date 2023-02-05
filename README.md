@@ -1,6 +1,6 @@
 # Habit Tracker
 
-This is a react app for tracking habits. You can add new habits, mark habits as done or not done for today. You can change status of a habit for last 6 days.
+This is a react app for tracking habits. You can add new habits, mark habits as done or not done for a day. You can change status of a habit for last 6 days.
 ## Run the project
 
 To run this project, run the following command
@@ -16,7 +16,8 @@ To run this project, run the following command
 
 ## Usage
 
-- Track all you habits at once
+- Track all your habits at once
+- Check activity of any habit for last 7 days
 - Edit status of a habit
 ## Screenshots
 
