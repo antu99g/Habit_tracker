@@ -7,20 +7,25 @@ import moment from "moment";
 
 // Home Page
 export default function ListView() {
+
    // List of all habits in state
    const allHabits = useSelector((state) => state.habits);
+
    // Current-date stored in state
    const lastUpdate = useSelector((state) => state.updatedOn);
+
    const dispatch = useDispatch();
 
    // Today's date
    const today = moment().format("DD MMM, YYYY");
+
    // State for input in new-habit-form
    const [titleInput, setTitleInput] = useState("");
 
 
    // Hook to detect change of current date
    useEffect(() => {
+
       // if date from state doesn't match with current date
       if (today !== lastUpdate) {
 
@@ -28,6 +33,7 @@ export default function ListView() {
 
          // If atleast one habit exists
          if (lastUpdate !== "" && allHabits.length > 0) {
+            
             // Adding none status to each habit when date changes
             let newHabits = allHabits.map((habit) => {
                habit.statusList.unshift("none");
