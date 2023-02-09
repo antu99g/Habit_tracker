@@ -49,9 +49,13 @@ export default function ListView() {
    const handleFormSubmit = (e) => {
       e.preventDefault();
       e.target.reset();
+      let statusList = [];
+      for(let i=0; i<7; i++){
+         statusList.push('none');
+      }
       let newHabit = {
          title: titleInput,
-         statusList: ["none"],
+         statusList,
          createdOn: today,
       };
       dispatch(addNewHabit(newHabit));

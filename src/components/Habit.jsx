@@ -6,12 +6,14 @@ export default function Habit({ habit, index }) {
    // Function to check consistancy
    const checkConsistency = (array) => {
       let consistancy = 0;
-      for (let i = 1; i < array.length; i++) {
-         if (array[i] === "done") {
-            consistancy++;
-         } else {
-            break;
-         }
+      if(array[0] !== 'notDone'){
+         for (let i = 0; i < array.length; i++) {
+            if (array[i] === "done") {
+               consistancy++;
+            } else {
+               break;
+            }
+         }         
       }
       return consistancy;
    };
