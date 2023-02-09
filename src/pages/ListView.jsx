@@ -12,27 +12,27 @@ export default function ListView() {
    const allHabits = useSelector((state) => state.habits);
 
    // Current-date stored in state
-   const lastUpdate = useSelector((state) => state.updatedOn);
+   const updatedOn = useSelector((state) => state.updatedOn);
 
    const dispatch = useDispatch();
 
-   // Today's date
-   const today = moment().format("DD MMM, YYYY");
-
    // State for input in new-habit-form
    const [titleInput, setTitleInput] = useState("");
+
+   // Today's date
+   const today = moment().format("DD MMM, YYYY");
 
 
    // Hook to detect change of current date
    useEffect(() => {
 
       // if date from state doesn't match with current date
-      if (today !== lastUpdate) {
+      if (today !== updatedOn) {
 
          dispatch(changeDate(today)); // change current-date in state
 
          // If atleast one habit exists
-         if (lastUpdate !== "" && allHabits.length > 0) {
+         if (updatedOn !== "" && allHabits.length > 0) {
             
             // Adding none status to each habit when date changes
             let newHabits = allHabits.map((habit) => {
@@ -64,7 +64,7 @@ export default function ListView() {
    
    return (
       <div className={styles.listContainer}>
-         <h2>{lastUpdate}</h2>
+         <h2>{updatedOn}</h2>
 
          <form onSubmit={handleFormSubmit}>
             <h3>Add new habit</h3>

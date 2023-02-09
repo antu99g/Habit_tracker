@@ -15,7 +15,7 @@ export default function habit(state = initialState, action) {
             habits: [action.habit, ...state.habits],
          };
 
-      case TODAY_STATUS:   // Reducer for for adding 'none' status to each habit when date changes
+      case TODAY_STATUS:   // Reducer for adding 'none' status to each habit when date changes
          return {
             ...state,
             habits: [action.habits],
